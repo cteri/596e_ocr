@@ -3,6 +3,11 @@ from flask_ml.flask_ml_server import MLServer
 from flask_ml.flask_ml_server.constants import DataTypes
 from flask_ml.flask_ml_server.models import ImageResult, ResponseModel
 
+import warnings
+
+# Ignore all warnings
+warnings.filterwarnings("ignore")
+
 model = OcrModel()
 server = MLServer(__name__)
 

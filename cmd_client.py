@@ -2,6 +2,11 @@ import argparse
 from pathlib import Path
 from src.ml.model import OcrModel
 
+import warnings
+
+# Ignore all warnings
+warnings.filterwarnings("ignore")
+
 
 def main():
     parser = argparse.ArgumentParser(description='Read text from image files')
@@ -12,7 +17,6 @@ def main():
 
     if not args.image_file:
         raise ValueError("The --image_file argument must be provided.")
-    print(args)
 
     image_file_path = args.image_file
 

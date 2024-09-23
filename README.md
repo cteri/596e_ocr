@@ -2,7 +2,7 @@
 
 ## Installing requirements
 ```
-python3 install requirements.txt
+python3 -m pip install -r requirements.txt
 ```
 
 ### Starting the server

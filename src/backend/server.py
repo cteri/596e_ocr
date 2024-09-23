@@ -1,9 +1,10 @@
-from ..ml.model import OcrModel
+import warnings
+
 from flask_ml.flask_ml_server import MLServer
 from flask_ml.flask_ml_server.constants import DataTypes
 from flask_ml.flask_ml_server.models import ImageResult, ResponseModel
 
-import warnings
+from ..ml.model import OcrModel
 
 # Ignore all warnings
 warnings.filterwarnings("ignore")
@@ -12,7 +13,7 @@ model = OcrModel()
 server = MLServer(__name__)
 
 
-@server.route('/ocr', input_type=DataTypes.IMAGE)
+@server.route("/ocr", input_type=DataTypes.IMAGE)
 def ocr(inputs: list[dict], parameters: dict):
     results = model.predict(inputs)
     results = [

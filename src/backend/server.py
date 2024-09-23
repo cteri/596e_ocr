@@ -8,7 +8,7 @@ server = MLServer(__name__)
 
 
 @server.route('/ocr', input_type=DataTypes.IMAGE)
-def transcribe(inputs: list[dict], parameters: dict):
+def ocr(inputs: list[dict], parameters: dict):
     results = model.predict(inputs)
     results = [
         ImageResult(file_path=res["file_path"], result=res["result"]) for res in results
